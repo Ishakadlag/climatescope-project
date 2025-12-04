@@ -1,95 +1,87 @@
-🌍 ClimateScope – Global Weather Trends & Extreme Events Visualization
+🌍 ClimateScope — Milestone 2
+Core Analysis & Interactive Dashboard Development
 
-A data-driven climate analytics platform
+This document summarizes all work completed in Milestone 2, including statistical analysis, exploratory insights, visualization planning, and the development of an interactive dashboard using Plotly Dash.
 
-📌 Overview
+✅ 1. Objective of Milestone 2
 
-ClimateScope is a data analysis and visualization project focused on understanding global weather patterns, anomalies, and climate behavior using the Global Weather Repository Dataset from Kaggle.
+The goal of Milestone 2 was to perform core climate data analysis, identify important patterns (extreme events, regional differences, trends), and design an interactive dashboard that can visualize insights across countries.
 
-This project processes worldwide daily weather observations to uncover:
+📊 2. Work Completed
+2.1 Statistical Analysis
 
-Seasonal temperature trends
+Performed detailed analysis on the cleaned dataset generated in Milestone 1:
 
-Regional climatic differences
+✔️ Distribution analysis of temperature, humidity, wind speed
 
-Extreme weather events
+✔️ Correlation analysis to find relationships between variables
 
-Air quality indicators
+Example: temperature vs humidity, wind_speed vs pressure
 
-Climate anomalies across the globe
+✔️ Seasonal trends based on timestamps
 
-The project is divided into 4 milestones, starting from data acquisition to dashboard development.
+✔️ Country-wise comparative analysis
 
-🚀 Features
+✔️ Detection of extreme weather values
 
-✔ Large-scale global weather dataset
-✔ Automated cleaning and preprocessing
-✔ Missing value & anomaly detection
-✔ Daily → Monthly aggregation
-✔ Normalized metrics for analysis
-✔ Ready for statistical analysis and visualization (Milestone-2)
-✔ Fully reproducible pipeline
+High/low temperature
 
-🧱 Tech Stack
-Component	Tools Used
-Language	Python 3
-Libraries	Pandas, NumPy, Matplotlib/Plotly (later), Seaborn
-Storage	CSV 
-Dataset Source	Kaggle Global Weather Repository
-📂 Dataset Source
+Very high humidity
 
-Dataset Used: Global Weather Repository – Kaggle
-Link: https://www.kaggle.com/datasets/nelgiriyewithana/global-weather-repository
+Sudden variations in wind speed
 
-Contains fields like:
+🌦️ 3. Key Insights Derived
+Temperature Trends
 
-temperature_celsius, humidity, wind_kph, precip_mm
+Countries with large climate variation were identified.
 
-Air quality metrics
+Times of sudden temperature drops/spikes were detected.
 
-Weather conditions
+Humidity & Wind Patterns
 
-Timestamps (last_updated)
+Some regions show consistently high humidity.
 
-Geo-coordinates
+Correlation revealed that wind speed spikes are often linked with lower pressure.
 
-Visibility, pressure, UV index, sunrise, sunset, etc.
+Extreme Events
 
-🧩 Milestones
-🟦 Milestone 1 – Data Preparation & Initial Analysis (Completed)
+Temperature > 45°C (heatwave range)
 
-Tasks completed:
+Sudden drops below 0°C (cold extremes)
 
-✔ Download & load dataset
-✔ Inspect dataset structure, schema, and data types
-✔ Identify missing values, anomalies, outliers
-✔ Handle missing & inconsistent entries
+Wind speeds > 40 km/h (storm conditions)
 
-Removed invalid temperature rows
+These events were summarized using group-by, filtering, and statistical summaries.
 
-Filled humidity with median
+📍 4. Visualization Planning
 
-Filled remaining numeric missing values
+The following chart types were selected for the dashboard:
 
-Converted timestamp into datetime
+Insight	Chart Type
+Temperature trends	Line chart
+Country-wise comparison	Bar chart / Choropleth
+Global temperature distribution	World map
+Humidity / wind comparison	Scatterplot
+Extreme events	Heatmap / table
+🖥️ 5. Interactive Dashboard (Plotly Dash)
 
-Removed invalid precipitation & wind values
+A fully functional web-based dashboard was created using:
 
-✔ Convert & normalize units
+Dash (Plotly)
 
-Used temperature_celsius and wind_kph as primary fields
+Plotly Express
 
-✔ Aggregate daily → monthly averages
+Pandas
 
-Extracted year and month
+Python
 
-Created grouped monthly dataset
+✔️ Dashboard Features
 
-✔ Save cleaned data
+Dropdown to select country
 
-Output file:
-data/cleaned/monthly_weather.csv
+Trend line showing temperature over time
 
-✔ Summary document created
+Global choropleth map showing average temperature by country
 
-File: Milestone1_Summary.pdf
+Automatic browser launch at:
+http://127.0.0.1:8050/
